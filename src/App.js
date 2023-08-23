@@ -1,5 +1,5 @@
-import React from 'react';
-import ExpenseItem from './components/ExpenseItem';
+import ExpenseItem from "./components/Expenses/ExpenseItem";
+import Card from "./components/UI/Cards";
 
 function App() {
   const expenses = [
@@ -16,29 +16,30 @@ function App() {
       locationOfExpenditure: "Dominos",
     },
     {
-      expenseDate: new Date(2023, 8, 21),
+      expenseDate: new Date(2023, 8, 22),
       expenseTitle: "Petrol",
       expenseAmount: 15,
-      locationOfExpenditure: "Indian Oil",
+      locationOfExpenditure: "Indain Oil",
     },
     {
-      expenseDate: new Date(2023, 8, 20),
+      expenseDate: new Date(2023, 8, 22),
       expenseTitle: "Gadar 2",
       expenseAmount: 20,
       locationOfExpenditure: "RR Cinema",
     },
   ];
-
   return (
     <div className="App">
       {expenses.map((expense, index) => (
-        <ExpenseItem
-          key={index}
-          expenseDate={expense.expenseDate}
-          expenseTitle={expense.expenseTitle}
-          locationOfExpenditure={expense.locationOfExpenditure}
-          expenseAmount={expense.expenseAmount}
-        />
+        <Card className="card">
+          <ExpenseItem
+            key={index}
+            expenseDate={expense.expenseDate}
+            expenseTitle={expense.expenseTitle}
+            locationOfExpenditure={expense.locationOfExpenditure}
+            expenseAmount={expense.expenseAmount}
+          />
+        </Card>
       ))}
     </div>
   );
