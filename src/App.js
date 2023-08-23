@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem";
+import React from 'react';
+import ExpenseItem from './components/ExpenseItem';
 
 function App() {
   const expenses = [
@@ -15,18 +16,19 @@ function App() {
       locationOfExpenditure: "Dominos",
     },
     {
-      expenseDate: new Date(2023, 8, 22),
+      expenseDate: new Date(2023, 8, 21),
       expenseTitle: "Petrol",
       expenseAmount: 15,
-      locationOfExpenditure: "Indain Oil",
+      locationOfExpenditure: "Indian Oil",
     },
     {
-      expenseDate: new Date(2023, 8, 22),
+      expenseDate: new Date(2023, 8, 20),
       expenseTitle: "Gadar 2",
       expenseAmount: 20,
       locationOfExpenditure: "RR Cinema",
     },
   ];
+
   return (
     <div className="App">
       {expenses.map((expense, index) => (
