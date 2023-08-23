@@ -1,7 +1,7 @@
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Card from "./components/UI/Cards";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       expenseDate: new Date(2023, 8, 23),
@@ -43,6 +43,6 @@ function App() {
       ))}
     </div>
   );
-}
+};
 
 export default App;
