@@ -31,9 +31,8 @@ const App = () => {
   return (
     <div className="App">
       {expenses.map((expense, index) => (
-        <Card className="card">
+        <Card className="card" key={index}>
           <ExpenseItem
-            key={index}
             expenseDate={expense.expenseDate}
             expenseTitle={expense.expenseTitle}
             locationOfExpenditure={expense.locationOfExpenditure}
