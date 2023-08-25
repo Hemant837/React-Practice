@@ -3,8 +3,12 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const deleteExpense = () => {
-    console.log("Clicked");
+  const deleteExpense = (event) => {
+    event.preventDefault();
+    if (event.target.className.includes("deleteExpense")) {
+      const element = event.target.parentElement;
+      element.remove();
+    }
   };
   return (
     <Card className="expense-item">
@@ -15,7 +19,9 @@ const ExpenseItem = (props) => {
       <div className="LocationOfExpenditure">{props.locationOfExpenditure}</div>
       <div className="expense-item__price">${props.expenseAmount}</div>
       <button>Change Title</button>
-      <button onClick={deleteExpense}>Delete Expense</button>
+      <button className="deleteExpense" onClick={deleteExpense}>
+        Delete Expense
+      </button>
     </Card>
   );
 };
