@@ -1,3 +1,4 @@
+import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Card from "./components/UI/Cards";
 
@@ -30,6 +31,7 @@ const App = () => {
   ];
   return (
     <div className="App">
+      <NewExpense />
       {expenses.map((expense, index) => (
         <Card className="card" key={index}>
           <ExpenseItem
