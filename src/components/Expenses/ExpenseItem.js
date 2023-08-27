@@ -16,7 +16,7 @@ const ExpenseItem = (props) => {
       <div className="xpense-item__description">
         <h2>{title}</h2>
       </div>
-      <div className="LocationOfExpenditure">{props.locationOfExpenditure}</div>
+      {/* <div className="LocationOfExpenditure">{props.locationOfExpenditure}</div> */}
       <div className="expense-item__price">${props.expenseAmount}</div>
       <button onClick={changeTitle}>Change Title</button>
     </Card>
