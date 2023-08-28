@@ -17,10 +17,10 @@ const ExpensesChart = (props) => {
   ];
 
   for (const expense of props.expenses) {
-    if (expense.date instanceof Date && !isNaN(expense.date.getTime())) {
-      const expenseMonth = expense.date.getMonth();
-      chartDataPoints[expenseMonth].value += expense.amount;
-    }
+  
+      const expenseMonth = expense.expenseDate.getMonth();
+      chartDataPoints[expenseMonth].value += expense.expenseAmount;
+
   }
   return <Chart dataPoints={chartDataPoints} />;
 };
