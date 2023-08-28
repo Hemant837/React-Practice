@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from "../Expenses/ExpensesFilter";
 import Card from "../UI/Cards";
@@ -18,26 +17,14 @@ const Expenses = (props) => {
         selectedYear={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      <ExpenseItem
-        expenseTitle={props.items[0].expenseTitle}
-        expenseAmount={props.items[0].expenseAmount}
-        expenseDate={props.items[0].expenseDate}
-      />
-      <ExpenseItem
-        expenseTitle={props.items[1].expenseTitle}
-        expenseAmount={props.items[1].expenseAmount}
-        expenseDate={props.items[1].expenseDate}
-      />
-      <ExpenseItem
-        expenseTitle={props.items[2].expenseTitle}
-        expenseAmount={props.items[2].expenseAmount}
-        expenseDate={props.items[2].expenseDate}
-      />
-      <ExpenseItem
-        expenseTitle={props.items[3].expenseTitle}
-        expenseAmount={props.items[3].expenseAmount}
-        expenseDate={props.items[3].expenseDate}
-      />
+      {props.items.map((expense) => (
+        <ExpenseItem
+          key={expense.id} // Assuming each expense has a unique "id" property
+          expenseTitle={expense.expenseTitle}
+          expenseAmount={expense.expenseAmount}
+          expenseDate={expense.expenseDate}
+        />
+      ))}
     </Card>
   );
 };
